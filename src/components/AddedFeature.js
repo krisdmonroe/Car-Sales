@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux' // HOC
 
 const AddedFeature = props => {
   return (
@@ -10,4 +11,12 @@ const AddedFeature = props => {
   );
 };
 
-export default AddedFeature;
+//wrap component in the second connect function call
+export default connect(
+ (state) => {
+   return {
+      titleOnProps:state.title
+   }
+},
+  {}
+  )(AddedFeature); // function currying

@@ -1,9 +1,15 @@
 import React from 'react';
+import { createStore } from 'redux';
 
+import { initialState } from './reducers/carReducer'
+import { carReducer } from './reducers/carReducer';
 import Header from './components/Header';
 import AddedFeatures from './components/AddedFeatures';
 import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
+
+export const store = createStore(carReducer);
+console.log(store.getState())
 
 const App = () => {
   const state = {
